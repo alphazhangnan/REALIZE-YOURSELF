@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
+<meta name="description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法
+的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="说一说jquery中$().each和$.each()的区别">
 <meta property="og:url" content="http://yoursite.com/2016/12/07/说一说jquery中$().each和$.each的区别/index.html">
 <meta property="og:site_name" content="卡尔维因的至邪造物">
-<meta property="og:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
-<meta property="og:updated_time" content="2016-12-07T09:06:29.565Z">
+<meta property="og:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法
+的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个c">
+<meta property="og:updated_time" content="2017-02-16T08:46:23.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="说一说jquery中$().each和$.each()的区别">
-<meta name="twitter:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
+<meta name="twitter:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法
+的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个c">
 
 
 
@@ -327,7 +330,8 @@
       
 
       
-        <p>今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。<br>下面将运用前人的分析对这两个方法做一个小结：<br>$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个checkbook，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 输出每个 li 元素的文本 --&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;script type="text/javascript" src="/jquery/jquery.js"&gt;&lt;/script&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	$(document).ready(function()&#123;</div><div class="line">	  $("button").click(function()&#123;</div><div class="line">	    $("li").each(function()&#123;</div><div class="line">	      alert($(this).text())</div><div class="line">	    &#125;);</div><div class="line">	  &#125;);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;button&gt;输出每个列表项的值&lt;/button&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">		&lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">		&lt;li&gt;Milk&lt;/li&gt;</div><div class="line">		&lt;li&gt;Soda&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;!-- 点击btn将会依次弹出Coffee、Milk、Soda --&gt;</div></pre></td></tr></table></figure></p>
+        <pre><code>今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法
+</code></pre><p>的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。<br>下面将运用前人的分析对这两个方法做一个小结：<br>$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个checkbook，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 输出每个 li 元素的文本 --&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;script type="text/javascript" src="/jquery/jquery.js"&gt;&lt;/script&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	$(document).ready(function()&#123;</div><div class="line">	  $("button").click(function()&#123;</div><div class="line">	    $("li").each(function()&#123;</div><div class="line">	      alert($(this).text())</div><div class="line">	    &#125;);</div><div class="line">	  &#125;);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;button&gt;输出每个列表项的值&lt;/button&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">		&lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">		&lt;li&gt;Milk&lt;/li&gt;</div><div class="line">		&lt;li&gt;Soda&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;!-- 点击btn将会依次弹出Coffee、Milk、Soda --&gt;</div></pre></td></tr></table></figure></p>
 <p>对于遍历一个数组，用$.each()来处理。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [ “one”, “two”, “three”, “four”, “five” ];</div><div class="line">$.each(arr1, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;!-- 输出：one   two  three  four   five --&gt;</div><div class="line"></div><div class="line">var arr2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</div><div class="line">$.each(arr2, function(i, item)&#123;</div><div class="line">	alert(item[0]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;!-- 输出：1   4   7 --&gt;</div><div class="line"></div><div class="line">var obj = &#123; one:1, two:2, three:3, four:4, five:5 &#125;;</div><div class="line">$.each(obj, function(key, val) &#123;</div><div class="line">	alert(obj[key]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;!-- 输出：1   2  3  4  5 --&gt;</div></pre></td></tr></table></figure></p>
 <p>总结来说$().each在dom处理上面用的较多,而$.each()通常用来处理数组或者类数组</p>
 
@@ -480,7 +484,7 @@ var duoshuoQuery = {short_name:"alphazhangnan"};
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
