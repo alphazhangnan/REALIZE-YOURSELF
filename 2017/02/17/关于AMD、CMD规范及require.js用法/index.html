@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
+<meta name="description" content="CommonJS、AMD、CMD这三种规范是由于编程模块化而产生的。CommonJS主要用于服务器端，在CommonJS中，有一个全局性的方法require(),用于加载模块，假设现在有一个数学模块math.js，1234var math = require(&apos;math&apos;);//调用方法var math = require(&apos;math&apos;);math.add(2,3); // 5
+在服务器端这样写没">
 <meta property="og:type" content="article">
-<meta property="og:title" content="说一说jquery中$().each和$.each()的区别">
-<meta property="og:url" content="http://yoursite.com/2016/12/07/说一说jquery中$().each和$.each的区别/index.html">
+<meta property="og:title" content="关于AMD、CMD规范及require.js用法">
+<meta property="og:url" content="http://yoursite.com/2017/02/17/关于AMD、CMD规范及require.js用法/index.html">
 <meta property="og:site_name" content="卡尔维因的至邪造物">
-<meta property="og:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
-<meta property="og:updated_time" content="2017-02-16T08:59:37.343Z">
+<meta property="og:description" content="CommonJS、AMD、CMD这三种规范是由于编程模块化而产生的。CommonJS主要用于服务器端，在CommonJS中，有一个全局性的方法require(),用于加载模块，假设现在有一个数学模块math.js，1234var math = require(&apos;math&apos;);//调用方法var math = require(&apos;math&apos;);math.add(2,3); // 5
+在服务器端这样写没">
+<meta property="og:updated_time" content="2017-02-17T15:01:57.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="说一说jquery中$().each和$.each()的区别">
-<meta name="twitter:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
+<meta name="twitter:title" content="关于AMD、CMD规范及require.js用法">
+<meta name="twitter:description" content="CommonJS、AMD、CMD这三种规范是由于编程模块化而产生的。CommonJS主要用于服务器端，在CommonJS中，有一个全局性的方法require(),用于加载模块，假设现在有一个数学模块math.js，1234var math = require(&apos;math&apos;);//调用方法var math = require(&apos;math&apos;);math.add(2,3); // 5
+在服务器端这样写没">
 
 
 
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/07/说一说jquery中$().each和$.each的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/17/关于AMD、CMD规范及require.js用法/"/>
 
 
 
 
 
-  <title> 说一说jquery中$().each和$.each()的区别 | 卡尔维因的至邪造物 </title>
+  <title> 关于AMD、CMD规范及require.js用法 | 卡尔维因的至邪造物 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +241,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/07/说一说jquery中$().each和$.each的区别/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/关于AMD、CMD规范及require.js用法/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alphazhangnan">
@@ -262,7 +265,7 @@
             
             
               
-                说一说jquery中$().each和$.each()的区别
+                关于AMD、CMD规范及require.js用法
               
             
           </h1>
@@ -275,8 +278,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-07T16:01:07+08:00">
-                2016-12-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T22:25:23+08:00">
+                2017-02-17
               </time>
             
 
@@ -291,8 +294,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/07/说一说jquery中$().each和$.each的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/07/说一说jquery中$().each和$.each的区别/" itemprop="commentCount"></span>
+                <a href="/2017/02/17/关于AMD、CMD规范及require.js用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/17/关于AMD、CMD规范及require.js用法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -302,7 +305,7 @@
 
           
           
-             <span id="/2016/12/07/说一说jquery中$().each和$.each的区别/" class="leancloud_visitors" data-flag-title="说一说jquery中$().each和$.each()的区别">
+             <span id="/2017/02/17/关于AMD、CMD规范及require.js用法/" class="leancloud_visitors" data-flag-title="关于AMD、CMD规范及require.js用法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -327,9 +330,10 @@
       
 
       
-        <p>今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。<br>下面将运用前人的分析对这两个方法做一个小结：<br>$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个checkbook，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 输出每个 li 元素的文本 --&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;script type="text/javascript" src="/jquery/jquery.js"&gt;&lt;/script&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	$(document).ready(function()&#123;</div><div class="line">	  $("button").click(function()&#123;</div><div class="line">	    $("li").each(function()&#123;</div><div class="line">	      alert($(this).text())</div><div class="line">	    &#125;);</div><div class="line">	  &#125;);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;button&gt;输出每个列表项的值&lt;/button&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">		&lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">		&lt;li&gt;Milk&lt;/li&gt;</div><div class="line">		&lt;li&gt;Soda&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;!-- 点击btn将会依次弹出Coffee、Milk、Soda --&gt;</div></pre></td></tr></table></figure></p>
-<p>对于遍历一个数组，用$.each()来处理。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [ “one”, “two”, “three”, “four”, “five” ];</div><div class="line">$.each(arr1, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;!-- 输出：one   two  three  four   five --&gt;</div><div class="line"></div><div class="line">var arr2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</div><div class="line">$.each(arr2, function(i, item)&#123;</div><div class="line">	alert(item[0]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;!-- 输出：1   4   7 --&gt;</div><div class="line"></div><div class="line">var obj = &#123; one:1, two:2, three:3, four:4, five:5 &#125;;</div><div class="line">$.each(obj, function(key, val) &#123;</div><div class="line">	alert(obj[key]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;!-- 输出：1   2  3  4  5 --&gt;</div></pre></td></tr></table></figure></p>
-<p>总结来说$().each在dom处理上面用的较多,而$.each()通常用来处理数组或者类数组</p>
+        <p>CommonJS、AMD、CMD这三种规范是由于编程模块化而产生的。CommonJS主要用于服务器端，在CommonJS中，有一个全局性的方法require(),用于加载模块，假设现在有一个数学模块math.js，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</div><div class="line"><span class="comment">//调用方法</span></div><div class="line"><span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</div><div class="line">math.add(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 5</span></div></pre></td></tr></table></figure></p>
+<p>在服务器端这样写没有问题的,但是放到浏览器端,’math.add(2,3)’必须等到math.js加载完成之后才能运行,所以CommonJS规范具有一定的局限性，使其不再适用于浏览器的环境。<br>那么，我们只有采用AMD规范（异步模块定义）<br>AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两个参数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="built_in">module</span>], callback);</div></pre></td></tr></table></figure></p>
+<p>第一个参数[module]，是一个数组，里面的成员就是要加载的模块；第二个参数callback，则是加载成功之后的回调函数。如果将前面的代码改写成AMD形式，就是下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">'math'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">math</span>) </span>&#123;</div><div class="line">　　math.add(<span class="number">2</span>, <span class="number">3</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>math.add()与math模块加载不是同步的，浏览器不会发生假死。所以很显然，AMD比较适合浏览器环境。</p>
 
       
     </div>
@@ -356,8 +360,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/26/第一次博客/" rel="next" title="武装我们的应该是知识,而不是一身废铜烂铁">
-                <i class="fa fa-chevron-left"></i> 武装我们的应该是知识,而不是一身废铜烂铁
+              <a href="/2016/12/07/说一说jquery中$().each和$.each的区别/" rel="next" title="说一说jquery中$().each和$.each()的区别">
+                <i class="fa fa-chevron-left"></i> 说一说jquery中$().each和$.each()的区别
               </a>
             
           </div>
@@ -365,10 +369,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/17/关于AMD、CMD规范及require.js用法/" rel="prev" title="关于AMD、CMD规范及require.js用法">
-                关于AMD、CMD规范及require.js用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
