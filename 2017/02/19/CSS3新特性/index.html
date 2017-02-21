@@ -85,7 +85,7 @@
 
 
 <meta name="description" content="以下整理一些CSS3常用的新特性:
-1.CSS选择器:
+CSS选择器:
 
 
 选择器
@@ -107,13 +107,13 @@ a[src^=”https”]
 
 [attribute$=value]
 a[src$=”.pdf”]
-选择其 src">
+选择其 src 属性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3新特性">
 <meta property="og:url" content="http://yoursite.com/2017/02/19/CSS3新特性/index.html">
 <meta property="og:site_name" content="卡尔维因的至邪造物">
 <meta property="og:description" content="以下整理一些CSS3常用的新特性:
-1.CSS选择器:
+CSS选择器:
 
 
 选择器
@@ -135,12 +135,12 @@ a[src^=”https”]
 
 [attribute$=value]
 a[src$=”.pdf”]
-选择其 src">
-<meta property="og:updated_time" content="2017-02-19T17:01:24.757Z">
+选择其 src 属性">
+<meta property="og:updated_time" content="2017-02-21T10:10:09.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3新特性">
 <meta name="twitter:description" content="以下整理一些CSS3常用的新特性:
-1.CSS选择器:
+CSS选择器:
 
 
 选择器
@@ -162,7 +162,7 @@ a[src^=”https”]
 
 [attribute$=value]
 a[src$=”.pdf”]
-选择其 src">
+选择其 src 属性">
 
 
 
@@ -396,8 +396,8 @@ a[src$=”.pdf”]
       
 
       
-        <p>以下整理一些CSS3常用的新特性:</p>
-<h3 id="1-CSS选择器"><a href="#1-CSS选择器" class="headerlink" title="1.CSS选择器:"></a>1.CSS选择器:</h3><table>
+        <p><strong>以下整理一些CSS3常用的新特性:</strong></p>
+<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器:"></a>CSS选择器:</h3><table>
 <thead>
 <tr>
 <th>选择器</th>
@@ -513,6 +513,213 @@ a[src$=”.pdf”]
 </tr>
 </tbody>
 </table>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><ul>
+<li>box-sizing:border-box</li>
+</ul>
+<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><ul>
+<li>border-radius(圆角,画圆,椭圆,半圆等)</li>
+<li>box-shadow(添加阴影)</li>
+<li>border-image(允许图片作为边框)</li>
+</ul>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
+<li>background-image(背景图片可叠加)</li>
+<li>background-size(cover,contain)</li>
+<li>background-origin(指定了背景图像的位置区域,border-box,padding-box,content-box)</li>
+<li>background-clip(背景剪裁属性是从指定位置开始绘制,content-box,padding-box)</li>
+</ul>
+<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><ul>
+<li><p>线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向,语法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> background: linear-gradient(*direction*, *color-stop1*, *color-stop2, ...*);</div><div class="line"> background: linear-gradient(*angle*, *color-stop1*, *color-stop2*);</div><div class="line"><span class="comment">// repeating-linear-gradient() 函数用于重复线性渐变</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>径向渐变（Radial Gradients）- 由它们的中心定义</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">background: radial-gradient(*center, shape size, start-color, ..., last-color*);</div><div class="line"><span class="comment">//repeating-radial-gradient() 函数用于重复径向渐变</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="文本效果"><a href="#文本效果" class="headerlink" title="文本效果"></a>文本效果</h3><ul>
+<li>text-shadow(适用于文本阴影)</li>
+<li>text-overflow(指定应向用户如何显示溢出内容)</li>
+<li>word-wrap(自动换行属性允许您强制文本换行)</li>
+<li>word-break(规定非中日韩文本的换行规则)</li>
+</ul>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><ul>
+<li>@font-face引入自定义字体</li>
+</ul>
+<h3 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h3><ul>
+<li>translate(),根据左(X轴)和顶部(Y轴)位置给定的参数平移</li>
+<li>rotate()，一个给定度数顺时针旋转的元素</li>
+<li>scale() 取决于宽度（X轴）和高度（Y轴）的参数进行缩放</li>
+<li>skew() 取决于宽度（X轴）和高度（Y轴）的参数进行发生倾斜</li>
+<li>matrix()，有六个参数，包含旋转，缩放，移动（平移）和倾斜功能</li>
+</ul>
+<h3 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h3><ul>
+<li>rotateX()，rotateY(),rotateZ(),围绕其在一个给定度数X轴/Y轴/Z轴旋转的元素</li>
+<li>translateX（),ranslateY（),ranslateZ（),定义 3D的沿X轴，Y轴，Z轴平移</li>
+<li>scaleX() scaleY() scaleZ(), 定义 3D 沿X轴，Y轴,Z轴缩放转换</li>
+<li>perspective，定义 3D 转换元素的透视视图必须加上</li>
+</ul>
+<h3 id="过渡-过渡是元素从一种样式逐渐改变为另一种的效果"><a href="#过渡-过渡是元素从一种样式逐渐改变为另一种的效果" class="headerlink" title="过渡(过渡是元素从一种样式逐渐改变为另一种的效果)"></a>过渡(过渡是元素从一种样式逐渐改变为另一种的效果)</h3><ul>
+<li>指定要添加效果的CSS属性</li>
+<li>指定效果的持续时间</li>
+</ul>
+<h3 id="动画-keyframes规则是创建动画。"><a href="#动画-keyframes规则是创建动画。" class="headerlink" title="动画(@keyframes规则是创建动画。)"></a>动画(@keyframes规则是创建动画。)</h3><ul>
+<li>规定动画的名称</li>
+<li>规定动画的时长</li>
+</ul>
+<h3 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>column-count</td>
+<td>规定元素应该被分隔的列数。</td>
+</tr>
+<tr>
+<td>column-fill</td>
+<td>规定如何填充列。</td>
+</tr>
+<tr>
+<td>column-gap</td>
+<td>规定列之间的间隔。</td>
+</tr>
+<tr>
+<td>column-rule</td>
+<td>设置所有 column-rule-* 属性的简写属性。</td>
+</tr>
+<tr>
+<td>column-rule-color</td>
+<td>规定列之间规则的颜色。</td>
+</tr>
+<tr>
+<td>column-rule-style</td>
+<td>规定列之间规则的样式。</td>
+</tr>
+<tr>
+<td>column-rule-width</td>
+<td>规定列之间规则的宽度。</td>
+</tr>
+<tr>
+<td>column-span</td>
+<td>规定元素应该横跨的列数。</td>
+</tr>
+<tr>
+<td>column-width</td>
+<td>规定列的宽度。</td>
+</tr>
+<tr>
+<td>columns</td>
+<td>规定设置 column-width 和 column-count 的简写属性。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appearance</td>
+<td>允许您将元素设置为标准用户界面元素的外观</td>
+</tr>
+<tr>
+<td>box-sizing</td>
+<td>允许您以确切的方式定义适应某个区域的具体内容。</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>为创作者提供使用图标化等价物来设置元素样式的能力。</td>
+</tr>
+<tr>
+<td>nav-down</td>
+<td>规定在使用 arrow-down 导航键时向何处导航。</td>
+</tr>
+<tr>
+<td>nav-index</td>
+<td>设置元素的 tab 键控制次序。</td>
+</tr>
+<tr>
+<td>nav-left</td>
+<td>规定在使用 arrow-left 导航键时向何处导航。</td>
+</tr>
+<tr>
+<td>nav-right</td>
+<td>规定在使用 arrow-right 导航键时向何处导航。</td>
+</tr>
+<tr>
+<td>nav-up</td>
+<td>规定在使用 arrow-up 导航键时向何处导航。</td>
+</tr>
+<tr>
+<td>outline-offset</td>
+<td>对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓。</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>规定是否可由用户对元素的尺寸进行调整。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="弹性盒子-flexbox"><a href="#弹性盒子-flexbox" class="headerlink" title="弹性盒子(flexbox)"></a>弹性盒子(flexbox)</h3><p>是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>display</td>
+<td>指定 HTML 元素盒子类型。</td>
+</tr>
+<tr>
+<td>flex-direction</td>
+<td>指定了弹性容器中子元素的排列方式</td>
+</tr>
+<tr>
+<td>justify-content</td>
+<td>设置弹性盒子元素在主轴（横轴）方向上的对齐方式。</td>
+</tr>
+<tr>
+<td>align-items</td>
+<td>设置弹性盒子元素在侧轴（纵轴）方向上的对齐方式。</td>
+</tr>
+<tr>
+<td>flex-wrap</td>
+<td>设置弹性盒子的子元素超出父容器时是否换行。</td>
+</tr>
+<tr>
+<td>align-content</td>
+<td>修改 flex-wrap 属性的行为，类似 align-items, 但不是设置子元素对齐，而是设置行对齐</td>
+</tr>
+<tr>
+<td>flex-flow</td>
+<td>flex-direction 和 flex-wrap 的简写</td>
+</tr>
+<tr>
+<td>order</td>
+<td>设置弹性盒子的子元素排列顺序。</td>
+</tr>
+<tr>
+<td>align-self</td>
+<td>在弹性子元素上使用。覆盖容器的 align-items 属性。</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>设置弹性盒子的子元素如何分配空间。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>附:flexbox属性练习<a href="http://flexboxfroggy.com/#zh-cn" target="_blank" rel="external">链接</a></strong></p>
+<h3 id="多媒体查询"><a href="#多媒体查询" class="headerlink" title="多媒体查询"></a>多媒体查询</h3><ul>
+<li>@media针对不同媒体类型可以定制不同的样式规则。</li>
+</ul>
 
       
     </div>
@@ -667,7 +874,7 @@ var duoshuoQuery = {short_name:"alphazhangnan"};
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS选择器"><span class="nav-number">1.</span> <span class="nav-text">1.CSS选择器:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS选择器"><span class="nav-number">1.</span> <span class="nav-text">CSS选择器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒模型"><span class="nav-number">2.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框"><span class="nav-number">3.</span> <span class="nav-text">边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">4.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐变"><span class="nav-number">5.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本效果"><span class="nav-number">6.</span> <span class="nav-text">文本效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">7.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2D转换"><span class="nav-number">8.</span> <span class="nav-text">2D转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D转换"><span class="nav-number">9.</span> <span class="nav-text">3D转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡-过渡是元素从一种样式逐渐改变为另一种的效果"><span class="nav-number">10.</span> <span class="nav-text">过渡(过渡是元素从一种样式逐渐改变为另一种的效果)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画-keyframes规则是创建动画。"><span class="nav-number">11.</span> <span class="nav-text">动画(@keyframes规则是创建动画。)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多列布局"><span class="nav-number">12.</span> <span class="nav-text">多列布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户界面"><span class="nav-number">13.</span> <span class="nav-text">用户界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性盒子-flexbox"><span class="nav-number">14.</span> <span class="nav-text">弹性盒子(flexbox)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多媒体查询"><span class="nav-number">15.</span> <span class="nav-text">多媒体查询</span></a></li></ol></div>
             
 
           </div>
