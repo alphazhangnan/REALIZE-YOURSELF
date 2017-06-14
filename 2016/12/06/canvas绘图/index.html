@@ -96,7 +96,8 @@
 <meta property="og:image" content="http://yoursite.com/2016/12/06/canvas绘图/yuan.png">
 <meta property="og:image" content="http://yoursite.com/2016/12/06/canvas绘图/fade.png">
 <meta property="og:image" content="http://yoursite.com/2016/12/06/canvas绘图/zhong.png">
-<meta property="og:updated_time" content="2017-06-13T17:28:58.448Z">
+<meta property="og:image" content="http://yoursite.com/2016/12/06/canvas绘图/12.png">
+<meta property="og:updated_time" content="2017-06-14T06:48:45.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="canvas绘图">
 <meta name="twitter:description" content="canvas介绍Canvas API（画布）是在HTML5中新增的标签用于在网页实时生成图像，并且可以操作图像内容，基本上它是一个可以用JavaScript操作的位图（bitmap）。兼容性：ie9+作用：使用js在网页上绘图，可绘制直线、矩形、圆形、字符以及添加图像的方法。 canvas使用&amp;lt;body&amp;gt;中创建&amp;lt;canvas&amp;gt;标签1&amp;lt;canvas id=&amp;quot;m">
@@ -371,7 +372,8 @@
 <p><img src="/2016/12/06/canvas绘图/xiantiao.png" alt="线条"><br><strong>绘制圆形</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line"><span class="keyword">var</span> cxt=c.getContext(<span class="string">"2d"</span>);</div><div class="line">cxt.fillStyle=<span class="string">"#FF0000"</span>;<span class="comment">//选择颜色,支持rgba</span></div><div class="line">cxt.beginPath();<span class="comment">//开始绘制</span></div><div class="line">cxt.arc(<span class="number">50</span>,<span class="number">50</span>,<span class="number">40</span>,<span class="number">0</span>,<span class="built_in">Math</span>.PI*<span class="number">2</span>,<span class="literal">true</span>);</div><div class="line">cxt.closePath();</div><div class="line">cxt.fill();</div></pre></td></tr></table></figure></p>
 <p><img src="/2016/12/06/canvas绘图/yuan.png" alt="圆"><br><strong>创建一个线性渐变。使用渐变填充矩形</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line"><span class="keyword">var</span> ctx=c.getContext(<span class="string">"2d"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 创建渐变</span></div><div class="line"><span class="keyword">var</span> grd=ctx.createLinearGradient(<span class="number">0</span>,<span class="number">0</span>,<span class="number">200</span>,<span class="number">0</span>);</div><div class="line">grd.addColorStop(<span class="number">0</span>,<span class="string">"red"</span>);</div><div class="line">grd.addColorStop(<span class="number">1</span>,<span class="string">"white"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 填充渐变</span></div><div class="line">ctx.fillStyle=grd;</div><div class="line">ctx.fillRect(<span class="number">10</span>,<span class="number">10</span>,<span class="number">150</span>,<span class="number">80</span>);</div></pre></td></tr></table></figure></p>
 <p><img src="/2016/12/06/canvas绘图/fade.png" alt="fade"><br><strong>下面,我们看高程里面绘制时钟表盘的例子</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line"><span class="keyword">var</span> context=c.getContext(<span class="string">"2d"</span>);</div><div class="line"><span class="comment">//开始路径</span></div><div class="line">context.beginPath();</div><div class="line"><span class="comment">//绘制外圆</span></div><div class="line">context.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">99</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI, <span class="literal">false</span>);</div><div class="line"><span class="comment">//绘制内圆</span></div><div class="line">context.moveTo(<span class="number">194</span>,<span class="number">100</span>);</div><div class="line">context.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">94</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI, <span class="literal">false</span>);</div><div class="line"><span class="comment">//绘制分针</span></div><div class="line">context.moveTo(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">context.lineTo(<span class="number">100</span>,<span class="number">15</span>);</div><div class="line"><span class="comment">//绘制时针</span></div><div class="line">context.moveTo(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">context.lineTo(<span class="number">35</span>,<span class="number">100</span>);</div><div class="line"><span class="comment">//描边路径</span></div><div class="line">context.stroke()</div></pre></td></tr></table></figure></p>
-<p><img src="/2016/12/06/canvas绘图/zhong.png" alt="zhong"></p>
+<p><img src="/2016/12/06/canvas绘图/zhong.png" alt="zhong"><br>现在我们给时钟加上一个数字<code>12</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">context.font = <span class="string">"bold 14px Arial"</span></div><div class="line">context.textAlign = <span class="string">"center"</span></div><div class="line">context.textBaseline = <span class="string">"middle"</span></div><div class="line">context.fillText(<span class="string">"12"</span>,<span class="number">100</span>,<span class="number">20</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="/2016/12/06/canvas绘图/12.png" alt="zhong12"></p>
 
       
     </div>
@@ -404,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/10/sass快速入门/" rel="next" title="sass快速入门">
-                <i class="fa fa-chevron-left"></i> sass快速入门
+              <a href="/2016/11/14/swiper-js快速使用/" rel="next" title="swiper.js使用心得">
+                <i class="fa fa-chevron-left"></i> swiper.js使用心得
               </a>
             
           </div>
@@ -485,7 +487,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -495,7 +497,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
