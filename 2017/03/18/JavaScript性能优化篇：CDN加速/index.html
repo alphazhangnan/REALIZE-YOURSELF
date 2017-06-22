@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="jquery," />
+  <meta name="keywords" content="JavaScript优化," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
-<meta name="keywords" content="jquery">
+<meta name="description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是">
+<meta name="keywords" content="JavaScript优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="说一说jquery中$().each和$.each()的区别">
-<meta property="og:url" content="http://yoursite.com/2016/08/15/说一说jquery中$().each和$.each的区别/index.html">
+<meta property="og:title" content="JavaScript性能优化篇：CDN加速">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/JavaScript性能优化篇：CDN加速/index.html">
 <meta property="og:site_name" content="卡尔维因的至邪造物">
-<meta property="og:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
-<meta property="og:updated_time" content="2017-06-05T12:31:24.065Z">
+<meta property="og:description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是">
+<meta property="og:updated_time" content="2017-06-22T07:57:53.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="说一说jquery中$().each和$.each()的区别">
-<meta name="twitter:description" content="今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。下面将运用前人的分析对这两个方法做一个小结：$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个ch">
+<meta name="twitter:title" content="JavaScript性能优化篇：CDN加速">
+<meta name="twitter:description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/15/说一说jquery中$().each和$.each的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/18/JavaScript性能优化篇：CDN加速/"/>
 
 
 
 
 
-  <title> 说一说jquery中$().each和$.each()的区别 | 卡尔维因的至邪造物 </title>
+  <title> JavaScript性能优化篇：CDN加速 | 卡尔维因的至邪造物 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/15/说一说jquery中$().each和$.each的区别/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/18/JavaScript性能优化篇：CDN加速/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alphazhangnan">
@@ -299,7 +299,7 @@
             
             
               
-                说一说jquery中$().each和$.each()的区别
+                JavaScript性能优化篇：CDN加速
               
             
           </h1>
@@ -312,8 +312,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-15T20:15:06+08:00">
-                2016-08-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-18T19:51:47+08:00">
+                2017-03-18
               </time>
             
 
@@ -332,7 +332,7 @@
 
           
           
-             <span id="/2016/08/15/说一说jquery中$().each和$.each的区别/" class="leancloud_visitors" data-flag-title="说一说jquery中$().each和$.each()的区别">
+             <span id="/2017/03/18/JavaScript性能优化篇：CDN加速/" class="leancloud_visitors" data-flag-title="JavaScript性能优化篇：CDN加速">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -357,9 +357,7 @@
       
 
       
-        <p>今天在做一个jquery事件代理的demo的时候,遍历的时候用到了$.each()这个方法,但是我在查这个方法的使用的时候发现了$().each和$.each两种,于是便查阅资料以搞清楚这两种方法有何不同。<br>下面将运用前人的分析对这两个方法做一个小结：<br>$().each,对于这个方法，在dom处理上面用的较多。如果页面有多个input标签类型为checkbox，对于这时用$().each来处理多个checkbook，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 输出每个 li 元素的文本 --&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/jquery/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">	$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	  $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	    $(<span class="string">"li"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	      alert($(<span class="keyword">this</span>).text())</div><div class="line">	    &#125;);</div><div class="line">	  &#125;);</div><div class="line">	&#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">button</span>&gt;</span>输出每个列表项的值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>Soda<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line">&lt;!-- 点击btn将会依次弹出Coffee、Milk、Soda --&gt;</div></pre></td></tr></table></figure></p>
-<p>对于遍历一个数组，用$.each()来处理。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [ “one”, “two”, “three”, “four”, “five” ];</div><div class="line">$.each(arr1, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="xml"><span class="comment">&lt;!-- 输出：one   two  three  four   five --&gt;</span></span></div><div class="line"></div><div class="line">var arr2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</div><div class="line">$.each(arr2, function(i, item)&#123;</div><div class="line">	alert(item[0]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 输出：1   4   7 --&gt;</span></div><div class="line"></div><div class="line">var obj = &#123; one:1, two:2, three:3, four:4, five:5 &#125;;</div><div class="line">$.each(obj, function(key, val) &#123;</div><div class="line">	alert(obj[key]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 输出：1   2  3  4  5 --&gt;</span></div></pre></td></tr></table></figure></p>
-<p>总结来说$().each在dom处理上面用的较多,而$.each()通常用来处理数组或者类数组</p>
+        <p>在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过<br><code>&lt;script src=&quot;url&quot;&gt;&lt;/script&gt;</code>这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？<br>首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是解决不了首次打开时缓慢的等待。<br>带宽问题： JavaScript是单线程的，so? 请求时必然是同步加载，加载完HTML、请求图片、加载CSS(等回流、重绘)、再去加载JS。且不算跑JS的时间，但是加载的时间就足以让用户关掉页面，或者F5(加载++)，将不同的资源分布在不同的域上，相当于我是在用多个带宽在同时下载引入的资源，节省了加载的时间，剩下的就是跑JS和构建DOM树的时间啦，想想还是很美好的。<br>缓存问题： 既然使用HTTP去动态请求资源，啊哈，在第一次加载时同步缓存，下次打开秒秒钟，开心！<br>迭代问题： 更改任意一个方面的资源，不用麻烦的去更改HTML-&gt;JS，只改需要相应域下的文件，工程化的完美体现。</p>
 
       
     </div>
@@ -383,7 +381,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jquery/" rel="tag"># jquery</a>
+            <a href="/tags/JavaScript优化/" rel="tag"># JavaScript优化</a>
           
         </div>
       
@@ -392,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/08/Markdown/" rel="next" title="Markdown">
-                <i class="fa fa-chevron-left"></i> Markdown
+              <a href="/2017/02/25/性能优化/" rel="next" title="web前端性能优化整理">
+                <i class="fa fa-chevron-left"></i> web前端性能优化整理
               </a>
             
           </div>
@@ -402,8 +400,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/06/关于AMD、CMD规范/" rel="prev" title="关于CommonJS、AMD、CMD规范">
-                关于CommonJS、AMD、CMD规范 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/22/GET-POST-的区别到底是什么？/" rel="prev" title="GET POST 的区别到底是什么？">
+                GET POST 的区别到底是什么？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
