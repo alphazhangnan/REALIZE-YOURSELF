@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是">
+<meta name="description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？ 首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还">
 <meta name="keywords" content="JavaScript优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript性能优化篇：CDN加速">
 <meta property="og:url" content="http://yoursite.com/2017/03/18/JavaScript性能优化篇：CDN加速/index.html">
 <meta property="og:site_name" content="卡尔维因的至邪造物">
-<meta property="og:description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是">
-<meta property="og:updated_time" content="2017-06-22T07:58:58.425Z">
+<meta property="og:description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？ 首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还">
+<meta property="og:updated_time" content="2017-06-22T08:00:01.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript性能优化篇：CDN加速">
-<meta name="twitter:description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是">
+<meta name="twitter:description" content="在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过&amp;lt;script src=&amp;quot;url&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？ 首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还">
 
 
 
@@ -357,7 +357,11 @@
       
 
       
-        <p>在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过<br><code>&lt;script src=&quot;url&quot;&gt;&lt;/script&gt;</code>这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？<br>首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是解决不了首次打开时缓慢的等待。<br>带宽问题： JavaScript是单线程的，so? 请求时必然是同步加载，加载完HTML、请求图片、加载CSS(等回流、重绘)、再去加载JS。且不算跑JS的时间，但是加载的时间就足以让用户关掉页面，或者F5(加载++)，将不同的资源分布在不同的域上，相当于我是在用多个带宽在同时下载引入的资源，节省了加载的时间，剩下的就是跑JS和构建DOM树的时间啦，想想还是很美好的。<br>缓存问题： 既然使用HTTP去动态请求资源，啊哈，在第一次加载时同步缓存，下次打开秒秒钟，开心！<br>迭代问题： 更改任意一个方面的资源，不用麻烦的去更改HTML-&gt;JS，只改需要相应域下的文件，工程化的完美体现。</p>
+        <p>在人人网、百度、知乎之类的网站，一个有趣的现象：JS文件放在另一个域，通过<br><code>&lt;script src=&quot;url&quot;&gt;&lt;/script&gt;</code>这样的方式来引入JS文件为什么这么做？ 这么做有什么好处？</p>
+<p>首次速度： 随着一个公司的发展，主页被访问的次数越来越多，难道每次都要去加载那么多 CSS、JS、image 文件？(这个问题换个方向去理解)当然，可以用离线缓存，但还是解决不了首次打开时缓慢的等待。</p>
+<p>带宽问题： JavaScript是单线程的，so? 请求时必然是同步加载，加载完HTML、请求图片、加载CSS(等回流、重绘)、再去加载JS。且不算跑JS的时间，但是加载的时间就足以让用户关掉页面，或者F5(加载++)，将不同的资源分布在不同的域上，相当于我是在用多个带宽在同时下载引入的资源，节省了加载的时间，剩下的就是跑JS和构建DOM树的时间啦，想想还是很美好的。</p>
+<p>缓存问题： 既然使用HTTP去动态请求资源，啊哈，在第一次加载时同步缓存，下次打开秒秒钟，开心！</p>
+<p>迭代问题： 更改任意一个方面的资源，不用麻烦的去更改HTML-&gt;JS，只改需要相应域下的文件，工程化的完美体现。</p>
 
       
     </div>
